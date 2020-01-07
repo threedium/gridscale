@@ -1,0 +1,76 @@
+AGP
+APM
+AT/DIN5
+Batteries
+BIOS
+Bus
+Case
+CD-R
+CD-ROM
+CD-RW
+Chassis
+CMOS
+COM port
+CPU
+Dip switches
+DVD
+EIDE
+EISA
+Flex
+Floppy drive
+Hard drive
+Headset
+Heat sink
+IDE
+Infrared port
+Intel OverDrive processor
+Intel Pentium processor
+Interposer
+IrDA
+IRQs
+ISA
+Joystick
+Jumpers
+Keyboard
+LCD
+MCA
+Memory
+Microphone
+Modem
+Monitor
+Motherboard
+Mouse
+Network card
+NICad batteries
+NiMH batteries
+Parallel port
+Palm Pilot
+PCI
+PCMCIA and PC Card
+PDA
+Power supply
+Power management
+Printer
+Processor
+PS/2
+RAID
+RAM
+Riser board
+Scanner
+SCSI
+Serial port
+Sound card
+Speakers
+Splitter
+SPS
+Surge suppressor
+Tape drive
+UPS
+USB
+Modem drivers
+Video card
+Video drivers
+Tape drivers
+Modem drivers
+Tape drivers
+
