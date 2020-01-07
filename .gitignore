@@ -4,3 +4,5 @@ some.txt
 dummy.txt
 views.py
 gridscale.db
+threadcsv.py
+core/out.txt
