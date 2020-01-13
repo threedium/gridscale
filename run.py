@@ -4,10 +4,13 @@
 import os
 
 from core import (create_app)
+from flask_twisted import Twisted
 
-config_name = "development"
+config_name = "production"
+# config_name = "development"
 app = create_app(config_name)
 
+twisted = Twisted(app)
 
 if __name__ == '__main__':
     app.run(

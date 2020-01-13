@@ -19,27 +19,37 @@ def create_products():
         if len(prods) > 0:
             response = True
         else:
-            init = 231415161
+            i = 0
             with open('prods.txt') as f:
                 content=f.readlines()
             content = [x.strip() for x in content]
             for k in content:
                 prd = {}
-                init += 1
-                prd['product_id'] = init
+                # To avoid Auto-Increment issues with SQLite incl below code
+                # init += 1
+                # prd['product_id'] = init
                 prd['price_net'] = float(random.randint(1,50))
                 prd['name'] = k.replace(" ", "_")
                 prd['status'] = 'Active'
                 if len(k) > 0:
                     try:
-                        add_prd = Products(
-                            product_id=init,
-                            name=k.replace(" ", "_"),
-                            price_net=random.randint(1,50),
-                            status="Active"
-                            )
+                        if not i:
+                            add_prd = Products(
+                                product_id=231415161,
+                                name=k.replace(" ", "_"),
+                                price_net=random.randint(1,50),
+                                status="Active"
+                                )
+                        else:
+                            add_prd = Products(
+                                # product_id=231415161,
+                                name=k.replace(" ", "_"),
+                                price_net=random.randint(1,50),
+                                status="Active"
+                                )
                         db.session.add(add_prd)
                         db.session.commit()
+                        i += 1
                     except Exception as e:
                         return False
 

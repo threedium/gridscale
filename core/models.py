@@ -10,9 +10,9 @@ class Customers(db.Model):
 
     customer_id = db.Column(db.BigInteger(), primary_key=True)
     name = db.Column(db.String(255), nullable=False)
-    customer_class = db.Column(db.Enum('Enduser', 'Reseller', 'ResellerHighVolume'))
+    customer_class = db.Column(db.Enum('Enduser', 'Reseller', 'ResellerHighVolume', name='Enduser'))
     vat_percentage = db.Column(db.Integer())
-    status = db.Column(db.Enum('Active', 'Deleted'))
+    status = db.Column(db.Enum('Active', 'Deleted', name='customer_status'))
 
     def __repr__(self):
         return "<Customers: {}>".format(
@@ -23,6 +23,7 @@ class Customers(db.Model):
             self.status
             )
 
+
 class Products(db.Model):
     """This class represents the products table."""
     __tablename__ = 'products'
@@ -30,7 +31,7 @@ class Products(db.Model):
     product_id = db.Column(db.BigInteger(), primary_key=True)
     name = db.Column(db.String(255))
     price_net = db.Column(db.Float(10,2))
-    status = db.Column(db.Enum('Active', 'Inactive'))
+    status = db.Column(db.Enum('Active', 'Inactive', name='product_status'))
 
     def __repr__(self):
         return "<Products: {}>".format(
@@ -39,6 +40,7 @@ class Products(db.Model):
             self.price_net,
             self.status
             )
+
 
 class Orders(db.Model):
     """This class represents the customers table."""

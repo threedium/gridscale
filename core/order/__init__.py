@@ -22,12 +22,12 @@ def delete_orders():
 def create_orders():
     status_code = 200
     data = request.args.to_dict()
-    k = Orders.query.all()
-    i = 2345678 + len(k)
+    # k = Orders.query.all()
+    # i = 2345678 + len(k)
     # print('Order', i)
     try:
         creord = Orders(
-            order_id=i,
+            # order_id=i,
             order_no=data['order_no'],
             customer_id=data['customer_id'],
             product_id=data['product_id'],

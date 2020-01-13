@@ -19,18 +19,27 @@ def before_request():
     customers = Customers.query.all()
     if not len(customers):
         start=int(time())
-        init = 101010101
+        init = 0
         while True:
             for x in range(1000):
                 init += 1
                 try:
-                    customer = Customers(
-                        customer_id=init,
-                        name=names.get_full_name(),
-                        customer_class=random.choice(cust_class),
-                        vat_percentage=random.choice(vats_data),
-                        status="Active"
-                        )
+                    if not init:
+                        customer = Customers(
+                            customer_id=101010101,
+                            name=names.get_full_name(),
+                            customer_class=random.choice(cust_class),
+                            vat_percentage=random.choice(vats_data),
+                            status="Active"
+                            )
+                    else:
+                        customer = Customers(
+                            # customer_id="NULL",
+                            name=names.get_full_name(),
+                            customer_class=random.choice(cust_class),
+                            vat_percentage=random.choice(vats_data),
+                            status="Active"
+                            )
                     db.session.add(customer)
                     db.session.commit()
                 except Exception as e:

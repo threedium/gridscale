@@ -33,8 +33,8 @@ class StagingConfig(Config):
 
 class ProductionConfig(Config):
     """Production Configurations"""
-    DEBUG = False
-    TESTING = False
+    DEBUG = True
+    TESTING = True
     SQLALCHEMY_DATABASE_URI = "postgres://gridscale:gridscale@localhost/gridscale"
 
 
