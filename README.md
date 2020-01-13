@@ -1,4 +1,7 @@
 
+## Access the Git Repo
+git clone https://github.com/threedium/gridscale.git
+
 ## To get the Virtual Environment
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python3 get-pip.py
@@ -23,3 +26,10 @@ pip install -r requirements.txt
 
 ## Start the Development/Production Server
 python run.py
+
+## Create the 100,000 orders
+time orderun.py
+real 44m30.454s user 21m24.149s sys 1m43.679s
+
+## Dump the PostgreSQL database to file
+pg_dump -U gridscale gridscale > gridscale.sql 
