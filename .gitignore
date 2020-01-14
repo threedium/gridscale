@@ -2,7 +2,6 @@ Task_gridscale.pdf
 dummy.py
 some.txt
 dummy.txt
-views.py
+core/views.py
 gridscale.db
-threadcsv.py
-core/out.txt
+.gitignore
